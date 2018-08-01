@@ -37,3 +37,6 @@ tests/error.log
 
 node_modules/*
 .idea/*
+.idea/
+user/config/
+vendor/bin/
