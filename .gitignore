@@ -1,0 +1,39 @@
+# Sass
+.sass-cache
+*.map
+
+# Add the entire Grav site to GitHub
+# https://getgrav.org/blog/developing-with-github-part-2
+composer.lock
+backup/*
+!backup/.*
+cache/*
+!cache/.*
+assets/*
+!assets/.*
+logs/*
+!logs/.*
+images/*
+!images/.*
+user/data/*
+!user/data/.*
+user/accounts/*
+!user/accounts/.*
+
+# local cofig and security
+user/localhost/config/security.yaml
+user/config/security.yaml
+user/config/site.yaml
+user/config/system.yaml
+user/config/plugins/email.yaml
+
+#specific .htaccess -> dists in webserver-congifs
+.htaccess
+
+tests/_output/*
+tests/_support/_generated/*
+tests/cache/*
+tests/error.log
+
+node_modules/*
+.idea/*
