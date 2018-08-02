@@ -1,0 +1,83 @@
+$size:     5em                 !default;
+$line:     1.2em               !default;
+$spacing:  .35em               !default;
+$font:    'Lato', sans-serif   !default;
+$weight:   900                 !default;
+
+.headline {
+  font-family: $font;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line;
+  letter-spacing: $spacing;
+  text-transform: uppercase;
+  &__w {
+    color: $tertiaryColor;
+  }
+  &__b {
+    color: $primaryColor;
+  }
+  &__p {
+    color: $secondaryColor;
+  }
+  &__underline {
+  position: relative;
+    &::after {
+      content:'';
+      background: yellow;
+      height: 20px;
+      width: 100%;
+      position: absolute;
+      left: -10px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: -1;
+    }
+    &-w {
+      &::after {
+        background: $tertiaryColor;
+      }
+    }
+    &-b {
+      &::after {
+        background: $primaryColor;
+      }
+    }
+    &-p {
+      &::after {
+        background: $secondaryColor;
+      }
+    }
+  }
+}
+
+.subline {
+  font-family: $font;
+  font-size: $size - 2.75em;
+  font-weight: $weight;
+  line-height: $line;
+  letter-spacing: $spacing + 6em;
+  text-transform: uppercase;
+  &__w {
+  color:$tertiaryColor
+  }
+  &__b {
+    color: $primaryColor;
+  }
+}
+
+.text {
+  font-family: $font;
+  font-size: $size - 4em;
+  line-height: $line - .2em;
+  letter-spacing: $spacing;
+  &__w {
+    color:$tertiaryColor;
+  }
+  &__b {
+    color: $primaryColor;
+  }
+  &__upper {
+    text-transform: uppercase;
+  }
+}

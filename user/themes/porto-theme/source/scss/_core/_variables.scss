@@ -1,0 +1,72 @@
+
+
+  /*////////////////
+        colors
+  ////////////////*/
+
+  $primaryColor: #27303E;
+  $primaryColorLight: lighten($primaryColor , 10%);
+  $primaryColorDark:   Darken($primaryColor, 10%);
+
+  $secondaryColor: #DE0A44;
+  $secondaryColorLight: Lighten($secondaryColor, 10%);
+  $secondaryColorDark: Darken($secondaryColor, 10%);
+
+  $tertiaryColor: #fff;
+  $tertiaryColorLight: Lighten($tertiaryColor ,10%);
+  $tertiaryColorDark: Darken($tertiaryColor ,10%);
+
+
+/*////////////////
+      width
+////////////////*/
+
+$maxWdh-xs: 320px;
+$maxWdh-s:  768px;
+$maxWdh-m: 1024px;
+$maxWdh-l: 1280px;
+$maxWdh-xl: 1366px;
+$maxWdh-xxl: 1920px;
+
+/*////////////////
+   media queries
+////////////////*/
+
+@mixin mq($break) {
+  @if $break == xs {
+    @media (min-width: $maxWdh-xs) {
+      @content;
+    }
+  }
+  @if $break == s {
+    @media (min-width: $maxWdh-s) {
+      @content;
+    }
+  } @else if $break == m {
+    @media (min-width: $maxWdh-m) {
+      @content;
+    }
+  } @else if $break == l {
+    @media (min-width: $maxWdh-l) {
+      @content;
+    }
+  } @else if $break == xl {
+    @media (min-width: $maxWdh-xl) {
+      @content;
+    }
+  } @else if $break == xxl {
+    @media (min-width: $maxWdh-xxl) {
+      @content;
+    }
+  }
+}
+
+
+  /*//////////////////
+        padding
+  ///////////////// */
+
+  $p_10: 10px    !default;
+  $p_20: 20px    !default;
+  $p_40: 40px    !default;
+  $p_80: 80px    !default;

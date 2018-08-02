@@ -1,0 +1,37 @@
+{% extends 'partials/base.html.twig' %}
+
+{% set show_onpage_menu = header.onpage_menu == true or header.onpage_menu is null %}
+{% macro pageLinkName(text) %}{{ text|lower|replace({' ':'_'}) }}{% endmacro %}
+
+
+
+{% block header_navigation %}
+    {% if show_onpage_menu %}
+        <nav class="nav-wrapper">
+            <a class="nav-link" href="{{ base_url == '' ? '/' : base_url }}"><img class="nav-logo" src="{{ url('theme://images/logo.svg') }}" alt="zwei_b logo"/></a>
+            <ul class="nav-list">
+            {% for module in page.collection() %}
+                {% set current_module = (module.active or module.activeChild) ? 'active' : '' %}
+                <li class="{{ current_module }} nav-item"><a class="text text__w text__upper" href="#{{ _self.pageLinkName(module.menu) }}">{{ module.menu }}</a></li>
+            {% endfor %}
+            {% for mitem in site.menu %}
+                <li>
+                    <a {% if mitem.class %}class="{{ mitem.class }} nav-item"{% endif %} href="{{ mitem.url }}">
+                        {{ mitem.text }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+        </nav>
+    {% else %}
+        {{  parent() }}
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+
+    {{ page.content }}
+    {% for module in page.collection() %}
+        {{ module.content }}
+    {% endfor %}
+{% endblock %}

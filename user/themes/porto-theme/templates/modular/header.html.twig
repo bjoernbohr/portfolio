@@ -1,0 +1,19 @@
+<header class="header-wrapper grid-container grid-item-12of12 width__100">
+    <h1 class="header-headline headline headline__w">
+        {{ page.header.headline_one }}
+        <span class="headline__underline headline__underline-p">Design</span>
+        {{ page.header.headline_two }}
+    </h1>
+    <div class="header-social flex-container flex-container__end-H">
+        {% for social in page.header.social %}
+            <a href="" class="header-social-item width__25">{{ page.media[social.icon].html(image,image) }}</a>
+
+        {% endfor %}
+
+    </div>
+    <figure class="header-img">
+        {% set image = page.header.image %}
+        {{ page.media[image].html(image,image) }}
+    </figure>
+    <span class="header-bg width__100"></span>
+</header>

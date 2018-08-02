@@ -1,0 +1,18 @@
+.nav {
+  &-wrapper {
+    position: fixed;
+    height: calc(100vh - 210px);
+    padding: $p_20 0px 0px $p_40;
+  }
+  &-link {
+    display: block;
+  }
+  &-logo {
+    height: 70px;
+  }
+  &-list {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
