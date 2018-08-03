@@ -1,0 +1,63 @@
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+<!DOCTYPE html>
+<html lang="{{ grav.language.getActive ?: theme_config.default_lang }}">
+<head>
+{% block head %}
+    <meta charset="utf-8" />
+    <title>{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% include 'partials/metadata.html.twig' %}
+
+    <link rel="icon" type="image/png" href="{{ url('theme://images/logo.png') }}" />
+    <link rel="canonical" href="{{ page.url(true, true) }}" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+    {% block stylesheets %}
+        {% do assets.addCss('theme://css/reset.css', 100) %}
+        {% do assets.addCss('theme://css/main.css', 99) %}
+        {% do assets.addCss('theme://css/modernizr.css', 98) %}
+    {% endblock %}
+    {{ assets.css() }}
+
+    {% block javascripts %}
+        {% do assets.addJs('jquery', 100) %}
+    {% endblock %}
+    {{ assets.js() }}
+
+{% endblock head%}
+</head>
+<body id="top" class="{{ page.header.body_classes }}">
+
+{% block header %}
+
+{% endblock %}
+
+{% block body %}
+
+
+{% block header_navigation %}
+        {% include 'partials/navigation.html.twig' %}
+    {% endblock %}
+
+        {% block content %}{% endblock %}
+
+
+{% endblock %}
+
+{% block footer %}
+    <footer id="footer" class="footer">
+
+    </footer>
+{% endblock %}
+
+{% block bottom %}
+    {{ assets.js('bottom') }}
+{% endblock %}
+
+
+<script id="__bs_script__">//<![CDATA[
+    document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.24.4'><\/script>".replace("HOST", location.hostname));
+    //]]></script>
+</body>
+</html>

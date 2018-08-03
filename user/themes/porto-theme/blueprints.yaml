@@ -1,0 +1,27 @@
+name: Porto Theme
+version: 0.1.0
+description: portfolio theme
+icon: rebel
+author:
+  name: bjoern bohr
+  email: bjoern.bohr@gmail.com
+homepage: https://github.com/bjoern-bohr/grav-theme-porto-theme
+demo: http://demo.yoursite.com
+keywords: grav, theme, etc
+bugs: https://github.com/bjoern-bohr/grav-theme-porto-theme/issues
+readme: https://github.com/bjoern-bohr/grav-theme-porto-theme/blob/develop/README.md
+license: MIT
+
+form:
+  validation: loose
+  fields:
+    dropdown.enabled:
+        type: toggle
+        label: Dropdown in Menu
+        highlight: 1
+        default: 1
+        options:
+          1: PLUGIN_ADMIN.ENABLED
+          0: PLUGIN_ADMIN.DISABLED
+        validate:
+          type: bool
