@@ -1,15 +1,32 @@
-$size:     5em                 !default;
-$line:     1.2em               !default;
-$spacing:  .35em               !default;
-$font:    'Lato', sans-serif   !default;
-$weight:   900                 !default;
+$size: 2em !default;
+$line: 1.3em !default;
+$spacing: .25em !default;
+$font: 'Lato', sans-serif !default;
+$weight: 900 !default;
+
+:root {
+  --size: 2em;
+  --line: 1.3em;
+  --spacing: .25em;
+  @include mq(s) {
+    --size: 5em;
+    --line: 1.2em;
+    --spacing: .35em;
+  }
+  @include mq(m) {
+    --size: 4em;
+  }
+  @include mq(l) {
+    --size: 5em;
+  }
+}
 
 .headline {
   font-family: $font;
-  font-size: $size;
+  font-size: var(--size);
   font-weight: $weight;
-  line-height: $line;
-  letter-spacing: $spacing;
+  line-height: var(--line);
+  letter-spacing: var(--spacing);
   text-transform: uppercase;
   &__w {
     color: $tertiaryColor;
@@ -21,10 +38,9 @@ $weight:   900                 !default;
     color: $secondaryColor;
   }
   &__underline {
-  position: relative;
+    position: relative;
     &::after {
-      content:'';
-      background: yellow;
+      content: '';
       height: 20px;
       width: 100%;
       position: absolute;
@@ -53,13 +69,13 @@ $weight:   900                 !default;
 
 .subline {
   font-family: $font;
-  font-size: $size - 2.75em;
+  font-size: calc(var(--size) - 2.75em);
   font-weight: $weight;
-  line-height: $line;
-  letter-spacing: $spacing + 6em;
+  line-height: var(--line);
+  letter-spacing: calc(var(--spacing) + 6em);
   text-transform: uppercase;
   &__w {
-  color:$tertiaryColor
+    color: $tertiaryColor
   }
   &__b {
     color: $primaryColor;
@@ -68,16 +84,42 @@ $weight:   900                 !default;
 
 .text {
   font-family: $font;
-  font-size: $size - 4em;
-  line-height: $line - .2em;
-  letter-spacing: $spacing;
+  font-size: calc(var(--size) - 4em);
+  line-height: calc(var(--line) - .2em);
+  letter-spacing: var(--spacing);
   &__w {
-    color:$tertiaryColor;
+    color: $tertiaryColor;
   }
   &__b {
     color: $primaryColor;
   }
   &__upper {
     text-transform: uppercase;
+  }
+}
+
+.link {
+  position: relative;
+  transition: $transition;
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    width: 0%;
+    height: 5px;
+    transition: $transition;
+  }
+  &__p {
+    transition: $transition;
+    &:hover {
+      transition: $transition;
+      &::after {
+        transition: $transition;
+        width: 100%;
+        height: 5px;
+        background-color: $secondaryColor;
+      }
+    }
   }
 }

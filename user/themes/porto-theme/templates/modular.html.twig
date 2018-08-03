@@ -12,7 +12,7 @@
             <ul class="nav-list">
             {% for module in page.collection() %}
                 {% set current_module = (module.active or module.activeChild) ? 'active' : '' %}
-                <li class="{{ current_module }} nav-item"><a class="text text__w text__upper" href="#{{ _self.pageLinkName(module.menu) }}">{{ module.menu }}</a></li>
+                <li class="{{ current_module }} nav-item"><a class="text text__w text__upper link link__p flex-container flex-container__center-V" href="#{{ _self.pageLinkName(module.menu) }}">{{ module.menu }}</a></li>
             {% endfor %}
             {% for mitem in site.menu %}
                 <li>

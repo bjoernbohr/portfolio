@@ -1,18 +1,26 @@
 .nav {
   &-wrapper {
     position: fixed;
-    height: calc(100vh - 210px);
-    padding: $p_20 0px 0px $p_40;
+    height: calc(100vh - 80px);
+    padding: $p_20;
+    @include mq(m) {
+      height: calc(100vh - 210px);
+      padding: $p_20 0px 0px $p_40;
+    }
+  }
+  &-list {
+    display: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
   }
   &-link {
     display: block;
   }
   &-logo {
-    height: 70px;
-  }
-  &-list {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    height: 40px;
+    @include mq(m) {
+      height: 70px;
+    }
   }
 }
