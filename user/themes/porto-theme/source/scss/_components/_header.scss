@@ -1,8 +1,24 @@
 .header {
   &-wrapper {
-    grid-template-rows: 50px repeat(8, 1fr);
     height: 100vh;
     padding: $p_20;
+    grid-template-rows: 50px repeat(8, 1fr);
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: $primaryColor;
+      z-index: -1;
+      height: calc(100vh - 210px);
+      width: 100%;
+      @include mq(m) {
+        height: calc(100vh - 120px);
+      }
+      @media screen and (max-width: 1024px) and (min-height: 1366px) {
+        height: calc(100vh - 210px);
+      }
+    }
     @include mq(m) {
       padding: $p_20 $p_40 0px $p_40;
     }
@@ -18,6 +34,7 @@
   &-social {
     grid-column: 11 / 15;
     align-self: center;
+    height: 100%;
     @include mq(s) {
       grid-column: 14;
     }
@@ -32,30 +49,16 @@
   &-img {
     background: $secondaryColor;
     grid-column: 4 / 15;
-    grid-row: 2 / 8;
+    grid-row: 2 / 10;
+    margin-bottom: 60px;
     z-index: 1;
     @include mq(m) {
       grid-column: 7 / 15;
-      grid-row: 2 / 9;
     }
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-    }
-  }
-  &-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: $primaryColor;
-    z-index: -1;
-    height: calc(100vh - 210px);
-    @include mq(m) {
-      height: calc(100vh - 120px);
-    }
-    @media screen and (max-width: 1024px) and (min-height: 1366px) {
-      height: calc(100vh - 210px);
     }
   }
 }

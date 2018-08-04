@@ -1,0 +1,16 @@
+<section class="about-wrapper grid-container grid-container__sides">
+    <h2 class="about-headline headline headline__b">
+        {{ page.header.headline_one }}
+        <span class="headline__underline headline__underline-p">
+            {{ page.header.headline_two }}
+        </span>
+    </h2>
+    <p class="about-text text text__b">
+        {{ page.header.text }}
+    </p>
+    <a href="" class="about-btn btn btn__p text text__w text__upper text__bold width__100">Sag Hallo</a>
+    <figure class="about-img">
+        {% set image = page.header.image %}
+        {{ page.media[image].html(image,image) }}
+    </figure>
+</section>

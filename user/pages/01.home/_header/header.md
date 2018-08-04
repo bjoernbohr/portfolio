@@ -8,6 +8,6 @@ social:
     -
         icon: instagram.svg
     -
-        icon: dribbble.svg    
+        icon: dribbble.svg
 ---
 

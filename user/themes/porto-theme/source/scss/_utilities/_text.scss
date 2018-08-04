@@ -83,10 +83,12 @@ $weight: 900 !default;
 }
 
 .text {
-  font-family: $font;
-  font-size: calc(var(--size) - 4em);
-  line-height: calc(var(--line) - .2em);
-  letter-spacing: var(--spacing);
+  @include mq(l) {
+    font-family: $font;
+    font-size: calc(var(--size) - 4em);
+    line-height: calc(var(--line) + .3em);
+    letter-spacing: var(--spacing);
+  }
   &__w {
     color: $tertiaryColor;
   }
@@ -95,6 +97,9 @@ $weight: 900 !default;
   }
   &__upper {
     text-transform: uppercase;
+  }
+  &__bold {
+    font-weight: $weight;
   }
 }
 

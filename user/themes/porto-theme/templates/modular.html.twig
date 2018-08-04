@@ -34,4 +34,9 @@
     {% for module in page.collection() %}
         {{ module.content }}
     {% endfor %}
+    {% set collection = page.collection() %}`
+
+    {% for child in collection %}
+        {% include 'partials/item.html.twig' with {'blog':page, 'page':child, 'truncate':true} %}
+    {% endfor %}
 {% endblock %}

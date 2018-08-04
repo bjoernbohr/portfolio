@@ -4,9 +4,11 @@
         <span class="headline__underline headline__underline-p">Design</span>
         {{ page.header.headline_two }}
     </h1>
-    <div class="header-social flex-container flex-container__end-H">
+    <div class="header-social flex-container flex-container__end-H width__100">
         {% for social in page.header.social %}
-            <a href="" class="header-social-item width__25">{{ page.media[social.icon].html(image,image) }}</a>
+            <a href="" class="header-social-item width__25">
+                <img src="{{ page.media[social.icon].url }}" alt="">
+            </a>
 
         {% endfor %}
 
@@ -15,5 +17,4 @@
         {% set image = page.header.image %}
         {{ page.media[image].html(image,image) }}
     </figure>
-    <span class="header-bg width__100"></span>
 </header>

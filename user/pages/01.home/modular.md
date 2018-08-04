@@ -10,4 +10,5 @@ content:
         dir: asc
         custom:
             - _header
+            - _about
 ---

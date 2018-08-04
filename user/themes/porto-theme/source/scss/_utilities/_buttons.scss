@@ -1,0 +1,8 @@
+.btn {
+  display: block;
+  max-height: 100px;
+  padding: $p_40;
+  &__p {
+    background: $secondaryColor;
+  }
+}
