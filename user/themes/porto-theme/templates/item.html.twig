@@ -1,0 +1,18 @@
+{% set parent = page.parent() %}
+
+<h2 style="background:red;">
+    {% block title %}  {{ page.header.title }} {% endblock %}
+
+</h2>
+
+<h3 style="background:blue">
+    {% block subline %}  {{ page.header.subline }} {% endblock %}
+</h3>
+
+<div style="background:green;">
+    {% block text %}  {{ page.header.text }} {% endblock %}
+</div>
+
+
+
+

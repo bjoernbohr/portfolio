@@ -1,5 +1,20 @@
 {% extends 'partials/base.html.twig' %}
 
+    {% set collection = page.collection() %}
+
+{% set collection = page.collection() %}
+
+    {% set base_url = page.url %}
+    {% set feed_url = base_url %}
+
+    {% if base_url == '/' %}
+        {% set base_url = '' %}
+    {% endif %}
+
+    {% if base_url == base_url_relative %}
+        {% set feed_url = base_url~'/'~page.slug %}
+    {% endif  %}
+
 {% set show_onpage_menu = header.onpage_menu == true or header.onpage_menu is null %}
 {% macro pageLinkName(text) %}{{ text|lower|replace({' ':'_'}) }}{% endmacro %}
 
@@ -8,11 +23,15 @@
 {% block header_navigation %}
     {% if show_onpage_menu %}
         <nav class="nav-wrapper">
-            <a class="nav-link" href="{{ base_url == '' ? '/' : base_url }}"><img class="nav-logo" src="{{ url('theme://images/logo.svg') }}" alt="zwei_b logo"/></a>
+            <a class="nav-link" href="{{ base_url == '' ? '/' : base_url }}"><img class="nav-logo"
+                                                                                  src="{{ url('theme://images/logo.svg') }}"
+                                                                                  alt="zwei_b logo"/></a>
             <ul class="nav-list">
                 {% for module in page.collection() %}
                     {% set current_module = (module.active or module.activeChild) ? 'active' : '' %}
-                    <li class="{{ current_module }} nav-item"><a class="text text__w text__upper link link__p flex-container flex-container__center-V" href="#{{ _self.pageLinkName(module.menu) }}">{{ module.menu }}</a></li>
+                    <li class="{{ current_module }} nav-item"><a
+                                class="text text__w text__upper link link__p flex-container flex-container__center-V"
+                                href="#{{ _self.pageLinkName(module.menu) }}">{{ module.menu }}</a></li>
                 {% endfor %}
                 {% for mitem in site.menu %}
                     <li>
@@ -24,24 +43,24 @@
             </ul>
         </nav>
     {% else %}
-        {{  parent() }}
+        {{ parent() }}
     {% endif %}
 {% endblock %}
 
 {% block content %}
 
     {{ page.content }}
-    {% for module in page.collection() %}
-        {{ module.content }}
-    {% endfor %}
+    {% include 'modular/header.html.twig' %}
+
+    {% include 'modular/about.html.twig' %}
 
     {% for child in collection %}
-        {% include 'partials/blog_item.html.twig' with {'blog': page, 'page': child, 'truncate': true} %}
+        {% include 'modular/teaser.html.twig' with {'blog': page, 'page': child, 'truncate': true} %}
     {% endfor %}
 
     {% if config.plugins.pagination.enabled and collection.params.pagination %}
         {% include 'partials/pagination.html.twig' with {'base_url': page.url, 'pagination': collection.params.pagination} %}
     {% endif %}
 
-
 {% endblock %}
+

@@ -1,0 +1,56 @@
+form:
+    fields:
+        upload:
+          type: file
+          label: Bilder hochladen
+          destination: 'user/pages/images/'
+          multiple: true
+          accept:
+          - image/*
+        heroImg:
+          type: filepicker
+          label: heroImg
+          preview_images: true
+          folder: 'user/pages/images'
+
+        socialSection:
+          type: section
+          title: Soziale Netzwerke
+          underline: true
+          fields:
+            social:
+              type: list
+              label: soziale Netzwerke anlegen
+              btnLabel: Netzwerk hinzufügen
+              style: vertical
+              fields:
+                .icon:
+                  type: filepicker
+                  label: Icon auswählen
+                  preview_images: true
+                  folder: 'user/pages/images'
+                  acccept:
+                  - .svg
+                  - .png
+                  - .gif
+                .link:
+                  type: text
+                  label: link
+        aboutSection:
+          type: section
+          title: About
+          underline: true
+        aboutImg:
+          type: filepicker
+          label: aboutImg
+          preview_images: true
+          folder: 'user/pages/images'
+        subline_one:
+          type: text
+          label: Überschrift
+        subline_two:
+          type: text
+          label: Unterstrichen
+        text:
+          type: textarea
+          label: text

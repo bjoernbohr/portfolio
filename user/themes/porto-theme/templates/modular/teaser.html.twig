@@ -1,0 +1,17 @@
+
+<section class="work-teaser-wrapper grid-container">
+    <figure class="work-teaser-img" style="overflow: hidden">
+        <img src="/images/3/c/9/6/a/3c96ae30b8cacedb08683ca3f317d7e8c8efa133-brooke-cagle-241290-unsplash.jpeg" alt="">
+    </figure>
+    <h2 class="work-teaser-headline headline">
+        {{ block("title", "item.html.twig") }}
+    </h2>
+    <h3 class="work-teaser-subline">
+       <span class="subline headline__underline headline__underline-p">
+          {{ block("subline", "item.html.twig") }}
+       </span>
+    </h3>
+<p class="work-teaser-text text">
+    {{ block("text", "item.html.twig") }}
+</p>
+</section>

@@ -1,20 +1,22 @@
 <header class="header-wrapper grid-container grid-item-12of12 width__100">
     <h1 class="header-headline headline headline__w">
-        {{ page.header.headline_one }}
+        {{ config.site.headline_one }}
         <span class="headline__underline headline__underline-p">Design</span>
-        {{ page.header.headline_two }}
+        {{ config.site.headline_two }}
     </h1>
     <div class="header-social flex-container flex-container__end-H width__100">
-        {% for social in page.header.social %}
-            <a href="" class="header-social-item width__25">
-                <img src="{{ page.media[social.icon].url }}" alt="">
+        {% for social in config.site.social %}
+
+            {{ dump(social.icon) }}
+            <a href="{{ social.link }}" class="header-social-item width__25">
+                {{page.find('/images').media[social.icon].quality(80).html('heroshot', 'selbstbild')}}
             </a>
 
         {% endfor %}
 
     </div>
     <figure class="header-img">
-        {% set image = page.header.image %}
-        {{ page.media[image].html(image,image) }}
+        {% set image = config.site.heroImg %}
+        {{page.find('/images').media[image].quality(80).html('heroshot', 'selbstbild')}}
     </figure>
 </header>
