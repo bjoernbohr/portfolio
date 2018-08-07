@@ -1,8 +1,19 @@
 .btn {
-  display: block;
+  display: flex;
+  align-items: center;
   max-height: 100px;
   padding: $p_40;
   &__p {
     background: $secondaryColor;
+  }
+  &__ghost {
+    &-p {
+      border:2px solid $secondaryColor;
+      color: $secondaryColor;
+    }
+    &-w {
+      border:2px solid $tertiaryColor;
+      color: $tertiaryColor;
+    }
   }
 }

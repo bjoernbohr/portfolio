@@ -1,0 +1,28 @@
+.footer {
+  &-wrapper {
+    position: relative;
+    grid-template-rows: repeat(4, 1fr);
+    &::before {
+      content: '';
+      position: absolute;
+      background: $primaryColor;
+      top: -1250px;
+      left: -1900px;
+      width: 2500px;
+      height: 2500px;
+      transform: rotate(-35deg);
+      z-index: -1;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      background: $primaryColor;
+      top: 0;
+      right: 0;
+      z-index: -1;
+    }
+    form {
+      background: $secondaryColor;
+    }
+  }
+}

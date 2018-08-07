@@ -49,6 +49,11 @@ $weight: 900 !default;
       transform: translateY(-50%);
       z-index: -1;
     }
+    &-small {
+      &::after {
+        height: 10px;
+      }
+    }
     &-w {
       &::after {
         background: $tertiaryColor;
@@ -126,5 +131,17 @@ $weight: 900 !default;
         background-color: $secondaryColor;
       }
     }
+  }
+}
+
+.align {
+  &__center {
+    text-align: center;
+  }
+  &__left {
+    text-align: left;
+  }
+  &__right {
+    text-align: right;
   }
 }

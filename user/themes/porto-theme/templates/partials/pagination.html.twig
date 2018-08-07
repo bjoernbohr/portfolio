@@ -1,0 +1,14 @@
+{% set pagination = pagination|default(page.collection.params.pagination) %}
+{% set base_url = base_url|default(page.url) %}
+{% if pagination|length > 1 %}
+    <div class="pagination-wrapper flex-container flex-container__center-HV">
+    {% if pagination.hasPrev %}
+        {% set url =  (base_url ~ pagination.params ~ pagination.prevUrl)|replace({'//':'/'}) %}
+        <a class="pagination-btn pagination-btn__prev text text__upper" href="{{ url }}" alt="zurück" title="prevbutton"> {{ 'Zurück'|t }}</a>
+    {% endif %}
+    {% if pagination.hasNext %}
+        {% set url = (base_url ~ pagination.params ~ pagination.nextUrl)|replace({'//':'/'}) %}
+        <a class="pagination-btn pagination-btn__next text text__upper" href="{{ url }}" alt="weiter" title="nextbutton">{{ 'Weiter'|t }} </a>
+    {% endif %}
+    </div>
+{% endif %}

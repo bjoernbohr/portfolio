@@ -46,8 +46,8 @@
 {% endblock %}
 
 {% block footer %}
-    <footer id="footer" class="footer">
-
+    <footer id="footer" class="footer-wrapper grid-container grid-container__sides">
+        {% include "forms/form.html.twig" with { form: forms('contact-form') } %}
     </footer>
 {% endblock %}
 

@@ -1,17 +1,20 @@
 
-<section class="work-teaser-wrapper grid-container">
-    <figure class="work-teaser-img" style="overflow: hidden">
-        <img src="/images/3/c/9/6/a/3c96ae30b8cacedb08683ca3f317d7e8c8efa133-brooke-cagle-241290-unsplash.jpeg" alt="">
+<section class="teaser-wrapper grid-container grid-container__sides {% if loop.first %}teaser-wrapper__first{% endif %}">
+    <figure class="teaser-img">
+        <a href="">
+            <img src="/images/3/c/9/6/a/3c96ae30b8cacedb08683ca3f317d7e8c8efa133-brooke-cagle-241290-unsplash.jpeg" alt="">
+        </a>
     </figure>
-    <h2 class="work-teaser-headline headline">
+    <h2 class="teaser-headline headline align-right">
         {{ block("title", "item.html.twig") }}
     </h2>
-    <h3 class="work-teaser-subline">
-       <span class="subline headline__underline headline__underline-p">
+    <h3 class="teaser-subline">
+       <span class="subline headline__underline headline__underline-small headline__underline-p">
           {{ block("subline", "item.html.twig") }}
        </span>
     </h3>
-<p class="work-teaser-text text">
+<p class="teaser-text text">
     {{ block("text", "item.html.twig") }}
 </p>
+    <a href="" class="teaser-btn btn btn__ghost-p text text__upper text__bold width__100">mehr infos</a>
 </section>

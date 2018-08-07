@@ -8,4 +8,10 @@
 @import "_components/_navigation.scss";
 @import "_components/_header.scss";
 @import "_components/_about.scss";
-@import "_components/_work.scss";
+@import "_components/_teaser.scss";
+@import "_components/_pagination.scss";
+@import "_components/_footer.scss";
+
+body {
+  overflow-x: hidden;
+}

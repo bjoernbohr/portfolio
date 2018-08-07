@@ -54,3 +54,21 @@ form:
         text:
           type: textarea
           label: text
+        foooterSection:
+          type: section
+          title: footer
+          underline: true
+        img:
+          type: filepicker
+          label: footerImg
+          preview_images: true
+          folder: 'user/pages/images'
+        headline:
+          type: text
+          label: Durchgestrichen
+        headline_two:
+          type: text
+          label: Überschrift
+        copyright:
+          type: text
+          label: Copyright
