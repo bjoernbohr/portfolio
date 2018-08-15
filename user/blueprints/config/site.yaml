@@ -12,7 +12,12 @@ form:
           label: heroImg
           preview_images: true
           folder: 'user/pages/images'
-
+        headline_one:
+          type: text
+          label: Headline one
+        headline_two:
+          type: text
+          label: Headline two
         socialSection:
           type: section
           title: Soziale Netzwerke

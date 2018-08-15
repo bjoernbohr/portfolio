@@ -4,8 +4,8 @@ form:
     name: contact-form
     fields:
         - name: name
-          label: Name
-          placeholder: Enter your name
+          label: Ich Bin
+          placeholder:
           autofocus: on
           autocomplete: on
           type: text
@@ -13,17 +13,23 @@ form:
             required: true
 
         - name: email
-          label: Email
-          placeholder: Enter your email address
+          label: Meine Mail
+          placeholder:
           type: email
           validate:
             required: true
 
+        - name: textarea
+          label: Ich möchte sagen
+          placeholder:
+          type: textarea
+          validate:
+            required: true
+
+
     buttons:
         - type: submit
           value: Submit
-        - type: reset
-          value: Reset
 
     process:
         - email:
