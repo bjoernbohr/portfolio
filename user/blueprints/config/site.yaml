@@ -71,7 +71,7 @@ form:
         headline:
           type: text
           label: Durchgestrichen
-        headline_two:
+        headline_three:
           type: text
           label: Überschrift
         copyright:

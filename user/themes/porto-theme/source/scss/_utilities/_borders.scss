@@ -1,0 +1,26 @@
+:root {
+  --p-size: 1px;
+}
+
+.b {
+  &-bo {
+    &__b {
+      border-bottom: var(--p-size) solid $secondaryColor;
+    }
+    &__p {
+      border-bottom: var(--p-size) solid $primaryColor;
+    }
+    &__w {
+      border-bottom: var(--p-size) solid $tertiaryColor;
+    }
+    &__p-2 {
+      border-bottom: calc(var(--p-size) + 1px) solid $secondaryColor;
+    }
+    &__b-2 {
+      border-bottom: calc(var(--p-size) + 1px) solid $primaryColor;
+    }
+    &__w-2 {
+      border-bottom: calc(var(--p-size) + 1px) solid $tertiaryColor;
+    }
+  }
+}

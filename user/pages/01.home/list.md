@@ -4,7 +4,7 @@ onpage_menu: true
 headline:
 
 content:
-    limit: 3
+    limit: 4
     order:
         by: default
         dir: desc

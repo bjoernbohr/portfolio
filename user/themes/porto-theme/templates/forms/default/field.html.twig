@@ -32,7 +32,7 @@
                                 value="{{ value|join(', ')|e('html_attr') }}"
                                 {# input attribute structures #}
                                 {% block input_attributes %}
-                                    class="{{ form_field_input_classes }} {{ field.classes }}"
+                                    class="{{ form_field_input_classes }} form-input text text__w form__app b-bo__b-2 width__100{{ field.classes }}"
                                     {% if field.id is defined %}id="{{ field.id|e }}" {% endif %}
                                     {% if field.style is defined %}style="{{ field.style|e }}" {% endif %}
                                     {% if field.disabled or isDisabledToggleable %}disabled="disabled"{% endif %}
@@ -73,7 +73,7 @@
                     {% endblock %}
                 {% endblock %}
                 {% if field.label is not same as(false) and field.display_label is not same as(false) %}
-                    <label class="{{ form_field_label_classes ?: 'inline' }}" {% if field.id is defined %}for="{{ field.id|e }}" {% endif %} >
+                    <label class="{{ form_field_label_classes ?: 'inline' }} form-label text text__bold" {% if field.id is defined %}for="{{ field.id|e }}" {% endif %} >
                         {% block label %}
                             {% if field.help %}
                                 {% if field.markdown %}

@@ -4,6 +4,8 @@
 @import "_utilities/_buttons.scss";
 @import "_utilities/_text.scss";
 @import "_utilities/_width.scss";
+@import "_utilities/form";
+@import "_utilities/borders";
 
 @import "_components/_navigation.scss";
 @import "_components/_header.scss";
@@ -11,7 +13,6 @@
 @import "_components/_teaser.scss";
 @import "_components/_pagination.scss";
 @import "_components/_footer.scss";
-@import "_components/_form.scss";
 
 
 body {

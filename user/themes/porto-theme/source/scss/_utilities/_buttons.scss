@@ -6,6 +6,13 @@
   &__p {
     background: $secondaryColor;
   }
+  &__b {
+    background: $primaryColor;
+  }
+  &__app {
+    appearance: none;
+    border: 0;
+  }
   &__ghost {
     &-p {
       border:2px solid $secondaryColor;

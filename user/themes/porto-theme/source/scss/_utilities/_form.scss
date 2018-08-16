@@ -1,0 +1,56 @@
+.form {
+  &-wrapper {
+    position: relative;
+    grid-column: 4 / 9;
+    grid-row: 1 / 5;
+    min-height: 768px;
+    padding: 160px $p_80 $p_80 $p_80;
+    margin-top: 160px;
+    z-index: 4;
+  }
+  &__app {
+    appearance: none;
+    border: 0;
+    background: transparent;
+  }
+  &-data {
+    position: relative;
+  }
+  &-input {
+    height: 55px;
+    padding-top: $p_20;
+    &-wrapper {
+      position: relative;
+      height: 75px;
+    }
+    &:focus {
+      ~ .form {
+        &-label {
+          top: 0;
+        }
+      }
+    }
+  }
+  &-label {
+    position: absolute;
+    top: $p_20;
+    left: 0;
+  }
+  &-area {
+    resize: none;
+  }
+  &-btn {
+    position: absolute;
+    bottom: 80px;
+    right: -80px;
+    max-width: 390px;
+  }
+  &-bg {
+    display: block;
+    background: $secondaryColor;
+    grid-column: 4 / 9;
+    grid-row: 1 / 5;
+    margin-top: 160px;
+    z-index: 2;
+  }
+}
