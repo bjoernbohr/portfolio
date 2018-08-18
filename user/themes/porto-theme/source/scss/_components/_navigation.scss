@@ -3,6 +3,7 @@
     position: fixed;
     height: calc(100vh - 80px);
     padding: $p_20;
+    z-index: 999;
     @include mq(m) {
       height: calc(100vh - 210px);
       padding: $p_20 0px 0px $p_40;
@@ -14,11 +15,11 @@
     top: 50%;
     transform: translateY(-50%);
   }
-  &-link {
-    display: block;
-  }
   &-logo {
+    display: block;
     height: 40px;
+    width: 75px;
+    background-repeat: no-repeat;
     @include mq(m) {
       height: 70px;
     }

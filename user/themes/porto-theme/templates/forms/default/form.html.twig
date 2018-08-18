@@ -58,7 +58,7 @@
           <button
                 {% if button.id %}id="{{ button.id }}"{% endif %}
                 {% block button_classes %}
-                class="{{ form_button_classes ?: 'button' }}  form-btn btn btn__b btn__app text text__w text__upper text__bold width__100{{ button.classes }}"
+                class="{{ form_button_classes ?: 'button' }}  form-btn btn btn__b btn__app btn-text text text__w text__upper text__bold width__100{{ button.classes }}"
                 {% endblock %}
                 {% if button.disabled %}disabled="disabled"{% endif %}
 
@@ -68,7 +68,7 @@
                     name="task" value="{{ button.task }}"
                 {% endif %}
             >
-                Sag Hallo
+                <span class="btn-text">Sag Hallo</span>
           </button>
           {% if button.url %}
               </a>

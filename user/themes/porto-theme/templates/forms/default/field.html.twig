@@ -73,7 +73,7 @@
                     {% endblock %}
                 {% endblock %}
                 {% if field.label is not same as(false) and field.display_label is not same as(false) %}
-                    <label class="{{ form_field_label_classes ?: 'inline' }} form-label text text__bold" {% if field.id is defined %}for="{{ field.id|e }}" {% endif %} >
+                    <label class="{{ form_field_label_classes ?: 'inline' }} form-label text text__bold" {% if field.id is defined %}for="{{ field.id|e }}" {% endif %}>
                         {% block label %}
                             {% if field.help %}
                                 {% if field.markdown %}
@@ -88,7 +88,6 @@
                                     {{ field.label|default(field.name|capitalize)|t|e('html_attr') }}
                                 {% endif %}
                             {% endif %}
-
                             {{ field.validate.required in ['on', 'true', 1] ? '<span class="required">*</span>' }}
                         {% endblock %}
                     </label>

@@ -13,20 +13,38 @@
     border: 0;
     background: transparent;
   }
-  &-data {
-    position: relative;
+  &-field {
+    padding-bottom: $p-40 - $p-10;
   }
   &-input {
+    position: relative;
     height: 55px;
     padding-top: $p_20;
+    z-index: 2;
     &-wrapper {
       position: relative;
       height: 75px;
     }
     &:focus {
+      font-weight: $weight;
+      border-color: #fff;
+      outline: none;
       ~ .form {
         &-label {
+          font-weight: $weight-n;
           top: 0;
+          color: #fff;
+        }
+      }
+    }
+    &:not(:placeholder-shown) {
+      font-weight: $weight;
+      border-color: #fff;
+      ~ .form {
+        &-label {
+          font-weight: $weight-n;
+          top: 0;
+          color: #fff;
         }
       }
     }
@@ -36,8 +54,47 @@
     top: $p_20;
     left: 0;
   }
-  &-area {
-    resize: none;
+  &-data {
+    position: relative;
+    &[data-grav-field="textarea"] {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      .form-label {
+        top: 0px;
+      }
+    }
+  }
+  &-textarea {
+    &-input {
+      resize: none;
+      outline: none;
+      height: 150px;
+      padding-top: $p-20;
+      &:focus {
+        font-weight: $weight;
+        border-color: #fff;
+        ~ .form {
+          &-label {
+            font-weight: $weight-n;
+            top: 0;
+            color: #fff;
+          }
+        }
+      }
+      &:not(:placeholder-shown) {
+        font-weight: $weight;
+        border-color: #fff;
+        ~ .form {
+          &-label {
+            font-weight: $weight-n;
+            top: 0;
+            color: #fff;
+          }
+        }
+      }
+    }
   }
   &-btn {
     position: absolute;

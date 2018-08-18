@@ -6,16 +6,19 @@ $transition: all .25s ease-in-out     !default;
 
   $primaryColor: #27303E;
   $primaryColorLight: lighten($primaryColor , 10%);
-  $primaryColorDark:   Darken($primaryColor, 10%);
+  $primaryColorLighter: lighten($primaryColor , 20%);
+  $primaryColorDark:   darken($primaryColor, 10%);
+  $primaryColorDarker:   darken($primaryColor, 20%);
 
   $secondaryColor: #DE0A44;
-  $secondaryColorLight: Lighten($secondaryColor, 10%);
-  $secondaryColorDark: Darken($secondaryColor, 10%);
+  $secondaryColorLight: lighten($secondaryColor, 10%);
+  $secondaryColorDark: darken($secondaryColor, 10%);
+  $secondaryColorDarker: darken($secondaryColor, 20%);
 
   $tertiaryColor: #fff;
-  $tertiaryColorLight: Lighten($tertiaryColor ,10%);
-  $tertiaryColorDark: Darken($tertiaryColor ,10%);
-
+  $tertiaryColorLight: lighten($tertiaryColor ,10%);
+  $tertiaryColorDark: darken($tertiaryColor ,10%);
+  $tertiaryColorDarker: darken($tertiaryColor ,20%);
 
 /*////////////////
       width
@@ -70,3 +73,19 @@ $maxWdh-xxl: 1920px;
   $p_20: 20px    !default;
   $p_40: 40px    !default;
   $p_80: 80px    !default;
+
+
+/*//////////////////
+    transition
+///////////////// */
+
+@mixin transition-s {
+  transition: all .5s;
+  transition-timing-function: cubic-bezier(0.01, 0.25, 0.01);
+}
+
+@mixin transition-l {
+  transition: all .5s;
+  transition-timing-function: cubic-bezier(0.01,  0.25, 0.01);
+  transition-delay: .15s;
+}

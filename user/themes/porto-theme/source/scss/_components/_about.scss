@@ -7,11 +7,10 @@
       content:'';
       position: absolute;
       top: 430px;
-      right: -1100px;
-      width: 2000px;
-      height: 1500px;
+      width: 2500px;
+      height: 2200px;
       background: $secondaryColor;
-      transform: rotate(-55deg);
+      clip-path: polygon(80% -4%, 26% 53%, 133% 100%);
       z-index: -1;
     }
   }

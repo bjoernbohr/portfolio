@@ -23,9 +23,7 @@
 {% block header_navigation %}
     {% if show_onpage_menu %}
         <nav class="nav-wrapper">
-            <a class="nav-link" href="{{ base_url == '' ? '/' : base_url }}"><img class="nav-logo"
-                                                                                  src="{{ url('theme://images/logo.svg') }}"
-                                                                                  alt="zwei_b logo"/></a>
+            <a class="nav-link nav-logo" href="{{ base_url == '' ? '/' : base_url }}" style="background-image:url('{{ url('theme://images/logo.svg') }}'); "></a>
             <ul class="nav-list">
                 {% for module in page.collection() %}
                     {% set current_module = (module.active or module.activeChild) ? 'active' : '' %}

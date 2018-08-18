@@ -3,6 +3,7 @@ $line: 1.3em !default;
 $spacing: .25em !default;
 $font: 'Lato', sans-serif !default;
 $weight: 900 !default;
+$weight-n: normal !default;
 
 :root {
   --size: 2em;
@@ -92,7 +93,7 @@ $weight: 900 !default;
     font-family: $font;
     font-size: calc(var(--size) - 4em);
     line-height: calc(var(--line) + .3em);
-    letter-spacing: var(--spacing);
+    letter-spacing: calc(var(--spacing) - 0.1em);
   }
   &__w {
     color: $tertiaryColor;

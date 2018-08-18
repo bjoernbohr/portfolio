@@ -1,13 +1,66 @@
 .btn {
+  position: relative;
   display: flex;
   align-items: center;
   max-height: 100px;
   padding: $p_40;
+  cursor: pointer;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    @include transition-s;
+    z-index: 1;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    @include transition-l;
+  }
+  &-text {
+    z-index: 3;
+  }
   &__p {
     background: $secondaryColor;
+    &:hover {
+      &::before {
+        background-color: $secondaryColorDark;
+        width: 100%;
+        @include transition-s;
+      }
+      &::after {
+        background-color: $secondaryColorDarker;
+        width: 100%;
+        @include transition-l;
+      }
+    }
   }
   &__b {
     background: $primaryColor;
+    &:hover {
+      &::before {
+        background-color: $primaryColorLight;
+        width: 100%;
+        @include transition-s;
+      }
+      &::after {
+        background-color: $primaryColorLighter;
+        width: 100%;
+        @include transition-l;
+      }
+    }
   }
   &__app {
     appearance: none;
@@ -17,10 +70,40 @@
     &-p {
       border:2px solid $secondaryColor;
       color: $secondaryColor;
+      @include transition-s;
+      &:hover {
+        color: #fff;
+        @include transition-s;
+        border-color: $secondaryColorDarker;
+        &::before {
+          background-color: $secondaryColorDark;
+          width: 100%;
+          @include transition-s;
+        }
+        &::after {
+          background-color: $secondaryColorDarker;
+          width: 100%;
+          @include transition-l;
+        }
+      }
     }
     &-w {
       border:2px solid $tertiaryColor;
       color: $tertiaryColor;
+      @include transition-s;
+      &:hover {
+        @include transition-s;
+        &::before {
+          background-color: $tertiaryColorDark;
+          width: 100%;
+          @include transition-s;
+        }
+        &::after {
+          background-color: $tertiaryColorDarker;
+          width: 100%;
+          @include transition-l;
+        }
+      }
     }
   }
 }

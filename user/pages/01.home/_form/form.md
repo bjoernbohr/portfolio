@@ -5,8 +5,7 @@ form:
     fields:
         - name: name
           label: Ich Bin
-          placeholder:
-          autofocus: on
+          placeholder: ' '
           autocomplete: on
           type: text
           validate:
@@ -14,14 +13,14 @@ form:
 
         - name: email
           label: Meine Mail
-          placeholder:
+          placeholder: ' '
           type: email
           validate:
             required: true
 
         - name: textarea
           label: Ich möchte sagen
-          placeholder:
+          placeholder: ' '
           type: textarea
           validate:
             required: true

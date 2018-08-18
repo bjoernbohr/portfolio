@@ -1,13 +1,13 @@
 {% extends "forms/field.html.twig" %}
 
 {% block input %}
-    <div class="{{ form_field_wrapper_classes ?: 'form-textarea-wrapper' }} {{ field.size }} {{ field.wrapper_classes }}">
+
         <textarea
             {# required attribute structures #}
             name="{{ (scope ~ field.name)|fieldName }}"
             {# input attribute structures #}
             {% block input_attributes %}
-                class="{{ form_field_textarea_classes }} form__app form-area text text__w  b-bo__b-2 width__100{{ field.classes }}"
+                class="{{ form_field_textarea_classes }} form__app form-textarea-input text text__w  b-bo__b-2 width__100{{ field.classes }}"
                 {% if field.id is defined %}id="{{ field.id|e }}" {% endif %}
                 {% if field.style is defined %}style="{{ field.style|e }}" {% endif %}
                 {% if field.disabled or isDisabledToggleable %}disabled="disabled"{% endif %}
@@ -25,5 +25,4 @@
                 {% if field.maxlength is defined %}maxlength="{{ field.maxlength }}"{% endif %}
             {% endblock %}
             >{{ value|trim|e('html') }}</textarea>
-    </div>
 {% endblock %}
