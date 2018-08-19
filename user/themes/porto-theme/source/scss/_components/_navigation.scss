@@ -3,7 +3,8 @@
     position: fixed;
     height: calc(100vh - 80px);
     padding: $p_20;
-    z-index: 999;
+    z-index: 998;
+    mix-blend-mode: difference;
     @include mq(m) {
       height: calc(100vh - 210px);
       padding: $p_20 0px 0px $p_40;
@@ -17,11 +18,21 @@
   }
   &-logo {
     display: block;
+    position: relative;
     height: 40px;
-    width: 75px;
+    width: 70px;
     background-repeat: no-repeat;
     @include mq(m) {
       height: 70px;
+    }
+    &__border {
+      position: fixed;
+      width: 70px;
+      height: 70px;
+      border: 3px solid $secondaryColor;
+      margin: $p_20 0px 0px $p_40;
+      mix-blend-mode: normal;
+      z-index: 999;
     }
   }
 }

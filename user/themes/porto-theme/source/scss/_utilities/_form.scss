@@ -14,7 +14,23 @@
     background: transparent;
   }
   &-field {
-    padding-bottom: $p-40 - $p-10;
+    padding-bottom: $p-40;
+  }
+  &-border {
+    position: absolute;
+    width: 0;
+    bottom: $p_20;
+    border-bottom: 2px solid $primaryColorLighter;
+    z-index: 3;
+    @include transition-s
+    &::before {
+      content: '';
+      position: absolute;
+      width: 0;
+      border-bottom: 2px solid #fff;
+      @include transition-l;
+      z-index: 2;
+    }
   }
   &-input {
     position: relative;
@@ -25,15 +41,29 @@
       position: relative;
       height: 75px;
     }
+    &:hover {
+      ~ .form-border {
+        width: 100%;
+        &::before {
+          width: 100%;
+        }
+      }
+    }
     &:focus {
       font-weight: $weight;
-      border-color: #fff;
       outline: none;
+      @include transition-s;
       ~ .form {
         &-label {
           font-weight: $weight-n;
           top: 0;
           color: #fff;
+        }
+        &-border {
+          width: 100%;
+          &::before {
+            width: 100%;
+          }
         }
       }
     }
@@ -53,6 +83,7 @@
     position: absolute;
     top: $p_20;
     left: 0;
+    @include transition-s;
   }
   &-data {
     position: relative;
@@ -61,8 +92,13 @@
       display: flex;
       flex-wrap: wrap;
       width: 100%;
-      .form-label {
-        top: 0px;
+      .form {
+        &-label {
+          top: 0;
+        }
+        &-border {
+          bottom: 0;
+        }
       }
     }
   }
@@ -71,15 +107,28 @@
       resize: none;
       outline: none;
       height: 150px;
-      padding-top: $p-20;
+      padding-top: $p-20 + $p_10;
+      &:hover {
+        ~ .form-border {
+          width: 100%;
+          &::before {
+            width: 100%;
+          }
+        }
+      }
       &:focus {
         font-weight: $weight;
-        border-color: #fff;
         ~ .form {
           &-label {
             font-weight: $weight-n;
             top: 0;
             color: #fff;
+          }
+          &-border {
+            width: 100%;
+            &::before {
+              width: 100%;
+            }
           }
         }
       }

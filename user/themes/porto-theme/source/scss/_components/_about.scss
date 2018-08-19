@@ -3,6 +3,7 @@
     position: relative;
     grid-template-rows: repeat(4, 25%);
     padding-top: 120px;
+    z-index: 1;
     &::before {
       content:'';
       position: absolute;

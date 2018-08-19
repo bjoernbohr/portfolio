@@ -87,5 +87,5 @@ $maxWdh-xxl: 1920px;
 @mixin transition-l {
   transition: all .5s;
   transition-timing-function: cubic-bezier(0.01,  0.25, 0.01);
-  transition-delay: .15s;
+  transition-delay: .25s;
 }

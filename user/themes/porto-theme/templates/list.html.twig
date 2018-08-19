@@ -22,8 +22,11 @@
 
 {% block header_navigation %}
     {% if show_onpage_menu %}
+        <a href="" class="nav-logo__border"></a>
         <nav class="nav-wrapper">
-            <a class="nav-link nav-logo" href="{{ base_url == '' ? '/' : base_url }}" style="background-image:url('{{ url('theme://images/logo.svg') }}'); "></a>
+            <a class="nav-link" href="{{ base_url == '' ? '/' : base_url }}">
+                <img src="{{ url('theme://images/logo.svg') }}" alt="logo" class="nav-logo">
+            </a>
             <ul class="nav-list">
                 {% for module in page.collection() %}
                     {% set current_module = (module.active or module.activeChild) ? 'active' : '' %}
