@@ -22,13 +22,16 @@
 
     {% block javascripts %}
         {% do assets.addJs('jquery', 100) %}
+        {% do assets.addJs('theme://js/vanilla-tilt.js', {group: 'bottom'}, 99) %}
+        {% do assets.addJs('theme://js/rellax.js', {group: 'bottom'}, 98) %}
     {% endblock %}
     {{ assets.js() }}
 
 {% endblock head%}
 </head>
 <body id="top" class="{{ page.header.body_classes }}">
-
+<span class="parallax parallax-item"></span>
+<span class="parallax parallax-item"></span>
 {% block header %}
 
 {% endblock %}
@@ -54,9 +57,19 @@
 {% block bottom %}
     {{ assets.js('bottom') }}
 {% endblock %}
+<script>
+    // Also can pass in optional settings block
+    var rellax = new Rellax('.rellax', {
+        speed: -2,
+        center: true,
+        wrapper: false,
+        round: true,
+        vertical: true,
+        horizontal: false
+    });
+</script>
 
 
-<script src="user/themes/porto-theme/js/vanilla-tilt.js"></script>
 
 </body>
 </html>

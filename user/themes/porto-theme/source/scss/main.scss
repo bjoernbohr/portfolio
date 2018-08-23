@@ -34,3 +34,18 @@ body {
     }
   }
 }
+
+body {
+position: relative;
+}
+.parallax {
+  &-item {
+    position: absolute;
+    top: 1430px;
+    width: 2500px;
+    height: 2200px;
+    background: $secondaryColor;
+    clip-path: polygon(80% -3%, 26% 53%, 133% 100%);
+    z-index: 1;
+  }
+}

@@ -1,5 +1,5 @@
 <header class="header-wrapper grid-container grid-item-12of12 width__100">
-    <h1 class="header-headline headline headline__w">
+    <h1 class="header-headline headline headline__w rellax" data-rellax-speed="1.5">
         {{ config.site.headline_one }}
         <span class="headline__underline headline__underline-p">Design</span>
         {{ config.site.headline_two }}
@@ -15,7 +15,7 @@
         {% endfor %}
 
     </div>
-    <figure class="header-img">
+    <figure class="header-img rellax" data-rellax-speed="1">
         {% set image = config.site.heroImg %}
         {{page.find('/images').media[image].quality(80).html('heroshot', 'selbstbild')}}
     </figure>
