@@ -21,7 +21,7 @@
 {% if (action == base_url_relative) %}
     {% set action = base_url_relative ~ '/' ~ page.slug %}
 {% endif %}
-<h2 class="footer-headline headline headline__w"><span class="headline__underline headline__underline-p">{{ config.site.headline }}</span> {{ config.site.headline_three }}</h2>
+<h2 class="footer-headline headline headline__w rellax" data-rellax-speed="1.5"><span class="headline__underline headline__underline-p">{{ config.site.headline }}</span> {{ config.site.headline_three }}</h2>
 <form name="{{ form.name }}"
       action="{{ action | trim('/', 'right') }}"
       method="{{ method }}"{{ multipart }}
@@ -58,7 +58,7 @@
           <button
                 {% if button.id %}id="{{ button.id }}"{% endif %}
                 {% block button_classes %}
-                class="{{ form_button_classes ?: 'button' }}  form-btn btn btn__b btn__app btn-text text text__w text__upper text__bold width__100{{ button.classes }}"
+                class="{{ form_button_classes ?: 'button' }}  form-btn btn btn__b btn__app btn-text text text__w text__upper text__bold width__100{{ button.classes }} rellax" data-rellax-speed="1"
                 {% endblock %}
                 {% if button.disabled %}disabled="disabled"{% endif %}
 

@@ -30,8 +30,7 @@
 {% endblock head%}
 </head>
 <body id="top" class="{{ page.header.body_classes }}">
-<span class="parallax parallax-item"></span>
-<span class="parallax parallax-item"></span>
+<span class="parallax parallax-item__p rellax" data-rellax-speed="5"></span>
 {% block header %}
 
 {% endblock %}
@@ -52,6 +51,8 @@
     <footer id="footer" class="footer-wrapper grid-container grid-container__sides">
         {% include "forms/form.html.twig" with { form: forms('contact-form') } %}
     </footer>
+    <span class="parallax parallax-item__b rellax" data-rellax-speed="5"></span>
+    <span class="parallax parallax-item__p-2 rellax" data-rellax-speed="3"></span>
 {% endblock %}
 
 {% block bottom %}
@@ -60,7 +61,7 @@
 <script>
     // Also can pass in optional settings block
     var rellax = new Rellax('.rellax', {
-        speed: -2,
+        speed: 2,
         center: true,
         wrapper: false,
         round: true,

@@ -1,0 +1,37 @@
+
+.parallax {
+  &-item {
+    &__p {
+      position: absolute;
+      top: 1430px;
+      width: 2500px;
+      height: 2200px;
+      background: $secondaryColor;
+      clip-path: polygon(80% -3%, 26% 53%, 133% 100%);
+      z-index: 1;
+      &-2 {
+        position: absolute;
+        background-color: $secondaryColor;
+        bottom: -135px;
+        right: 0;
+        width: 1250px;
+        height: 1060px;
+        clip-path: polygon(14% 33%, 100% 110%, 100% 0%);
+        background-image: url("http://localhost/portfolio/images/1/0/2/b/e/102bec8638dd9065b7db08ac716d33ab9ca3ae6a-dude.jpeg");
+        background-size: cover;
+        background-blend-mode: darken;
+        z-index: 0;
+      }
+    }
+    &__b {
+      position: absolute;
+      background: $primaryColor;
+      left: 0;
+      bottom: -178px;
+      width: 1800px;
+      height: 1590px;
+      clip-path: polygon(0% 88%, 74% 55%, 0% 0);
+      z-index: 1;
+    }
+  }
+}

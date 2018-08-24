@@ -6,6 +6,7 @@
 @import "_utilities/_width.scss";
 @import "_utilities/form";
 @import "_utilities/borders";
+@import "_utilities/parallax";
 
 @import "_components/_navigation.scss";
 @import "_components/_header.scss";
@@ -37,15 +38,4 @@ body {
 
 body {
 position: relative;
-}
-.parallax {
-  &-item {
-    position: absolute;
-    top: 1430px;
-    width: 2500px;
-    height: 2200px;
-    background: $secondaryColor;
-    clip-path: polygon(80% -3%, 26% 53%, 133% 100%);
-    z-index: 1;
-  }
 }
