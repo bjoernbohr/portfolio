@@ -1,0 +1,1 @@
+var ids=["header","about","works","contact"];jQuery(document).ready(function(){jQuery.each(ids,function(a,e){jQuery("#"+e).addClass("fadein")})});

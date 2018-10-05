@@ -1,0 +1,25 @@
+/*//////////7//
+    header
+/////////// */
+
+.header-wrapper.fadein {
+  &::after {
+    width: 100%;
+    transition: $transition;
+    transition-delay: .25s;
+  }
+}
+
+.go {
+  .headline {
+    &__underline {
+      &::after {
+        width: 100%;
+        transition: $transition;
+        transition-delay: .75s;
+      }
+    }
+  }
+}
+
+

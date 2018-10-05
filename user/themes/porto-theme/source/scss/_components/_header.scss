@@ -18,10 +18,12 @@
       position: absolute;
       top: 0;
       left: 0;
-      background: $primaryColor;
       z-index: -1;
       height: calc(100vh - 210px);
-      width: 100%;
+      width: 0%;
+      background: $primaryColor;
+      background-image: url('../images/pattern.svg');
+      transition: $transition;
       @include mq(m) {
         height: calc(100vh - 120px);
       }
@@ -58,7 +60,6 @@
     }
   }
   &-img {
-    background: $secondaryColor;
     grid-column: 4 / 15;
     grid-row: 2 / 10;
     margin-bottom: 60px;
