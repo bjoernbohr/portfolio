@@ -11,10 +11,11 @@
     }
   }
   &-list {
-    display: none;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    position: relative;
+  }
+  &-link {
+    position: relative;
+    display: block;
   }
   &-logo {
     display: block;
@@ -33,6 +34,34 @@
       margin: $p_20 0px 0px $p_40;
       mix-blend-mode: normal;
       z-index: 999;
+    }
+  }
+}
+
+.link {
+  position: relative;
+  transition: $transition;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: -1;
+    width: 0%;
+    height: 4px;
+    margin-top: 1px;
+    transform: translateY(-50%);
+    transition: $transition;
+  }
+  &__p {
+    transition: $transition;
+    &:hover {
+      transition: $transition;
+      &::after {
+        transition: $transition;
+        width: 100%;
+        background-color: $secondaryColor;
+      }
     }
   }
 }

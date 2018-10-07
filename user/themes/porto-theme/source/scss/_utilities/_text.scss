@@ -110,32 +110,6 @@ $weight-n: normal !default;
   }
 }
 
-.link {
-  position: relative;
-  transition: $transition;
-  &::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    z-index: -1;
-    width: 0%;
-    height: 5px;
-    transition: $transition;
-  }
-  &__p {
-    transition: $transition;
-    &:hover {
-      transition: $transition;
-      &::after {
-        transition: $transition;
-        width: 100%;
-        height: 5px;
-        background-color: $secondaryColor;
-      }
-    }
-  }
-}
-
 .align {
   &__center {
     text-align: center;

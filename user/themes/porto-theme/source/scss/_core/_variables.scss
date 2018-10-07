@@ -1,35 +1,36 @@
-$transition: all .25s ease-in-out     !default;
+$transition: all .25s ease-in-out !default;
 
-  /*////////////////
-        colors
-  ////////////////*/
+/*////////////////
+      colors
+////////////////*/
 
-  $primaryColor: #27303E;
-  $primaryColorLight: lighten($primaryColor , 10%);
-  $primaryColorLighter: lighten($primaryColor , 20%);
-  $primaryColorDark:   darken($primaryColor, 10%);
-  $primaryColorDarker:   darken($primaryColor, 20%);
+$primaryColor: #27303E;
+$primaryColorLight: lighten($primaryColor, 10%);
+$primaryColorLighter: lighten($primaryColor, 20%);
+$primaryColorDark: darken($primaryColor, 10%);
+$primaryColorDarker: darken($primaryColor, 20%);
 
-  $secondaryColor: #DE0A44;
-  $secondaryColorLight: lighten($secondaryColor, 10%);
-  $secondaryColorDark: darken($secondaryColor, 10%);
-  $secondaryColorDarker: darken($secondaryColor, 20%);
+$secondaryColor: #DE0A44;
+$secondaryColorLight: lighten($secondaryColor, 10%);
+$secondaryColorDark: darken($secondaryColor, 10%);
+$secondaryColorDarker: darken($secondaryColor, 20%);
 
-  $tertiaryColor: #fff;
-  $tertiaryColorLight: lighten($tertiaryColor ,10%);
-  $tertiaryColorDark: darken($tertiaryColor ,10%);
-  $tertiaryColorDarker: darken($tertiaryColor ,20%);
+$tertiaryColor: #fff;
+$tertiaryColorLight: lighten($tertiaryColor, 10%);
+$tertiaryColorDark: darken($tertiaryColor, 10%);
+$tertiaryColorDarker: darken($tertiaryColor, 20%);
 
 /*////////////////
       width
 ////////////////*/
 
 $maxWdh-xs: 320px;
-$maxWdh-s:  768px;
+$maxWdh-s: 768px;
 $maxWdh-m: 1024px;
 $maxWdh-l: 1280px;
 $maxWdh-xl: 1366px;
 $maxWdh-xxl: 1920px;
+$maxWdh-ws: 1930px;
 
 /*////////////////
    media queries
@@ -61,19 +62,21 @@ $maxWdh-xxl: 1920px;
     @media (min-width: $maxWdh-xxl) {
       @content;
     }
+  } @else if $break == xxxl {
+    @media (min-width: $maxWdh-ws) {
+      @content;
+    }
   }
 }
 
+/*//////////////////
+      padding
+///////////////// */
 
-  /*//////////////////
-        padding
-  ///////////////// */
-
-  $p_10: 10px    !default;
-  $p_20: 20px    !default;
-  $p_40: 40px    !default;
-  $p_80: 80px    !default;
-
+$p_10: 10px !default;
+$p_20: 20px !default;
+$p_40: 40px !default;
+$p_80: 80px !default;
 
 /*//////////////////
     transition
@@ -86,6 +89,6 @@ $maxWdh-xxl: 1920px;
 
 @mixin transition-l {
   transition: all .5s;
-  transition-timing-function: cubic-bezier(0.01,  0.25, 0.01);
+  transition-timing-function: cubic-bezier(0.01, 0.25, 0.01);
   transition-delay: .25s;
 }
