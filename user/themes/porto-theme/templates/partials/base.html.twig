@@ -26,11 +26,12 @@
 
     {% block javascripts %}
         {% do assets.addJs('jquery', 100) %}
+        {% do assets.addJs('theme://js/scrollIntoView.js', 99) %}
+        {% do assets.addJs('theme://js/main-min.js', 98) %}
         {% do assets.addJs('theme://js/vanilla-tilt.js', {group: 'bottom'}, 99) %}
-        {% do assets.addJs('theme://js/rellax.js', {group: 'bottom'}, 98) %}
-        {% do assets.addJs('theme://js/main-min.js', 97) %}
-        {% do assets.addJs('theme://js/css3-animate-it.js', {group: 'bottom'}, 97) %}
-        {% do assets.addJs('theme://js/typed.js', 97) %}
+        {% do assets.addJs('theme://js/rellax.js', {group: 'bottom'}, 97) %}
+{#        {% do assets.addJs('theme://js/css3-animate-it.js', {group: 'bottom'}, 97) %}#}
+{#        {% do assets.addJs('theme://js/typed.js', 97) %}#}
     {% endblock %}
     {{ assets.js() }}
 
@@ -75,6 +76,29 @@
             vertical: true,
             horizontal: false
         });
+
+        jQuery(document).ready(function(){
+
+            function isVisisble(elem){
+                return $(elem).offset().top - $(window).scrollTop() < $(elem).height() ;
+            }
+            $(window).scroll(function(){
+                if (isVisisble( $('#about') )) {
+                    $('#about').addClass('turn_on');
+                } else {
+                    $('#about').removeClass('turn_on');
+                }
+            });
+        });
     </script>
+
+
+<script id="__bs_script__">//<![CDATA[
+    document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.24.4'><\/script>".replace("HOST", location.hostname));
+    //]]></script>
+
+
+
+
 </body>
 </html>

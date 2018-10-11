@@ -1,5 +1,5 @@
-<header id="header" class="header-wrapper grid-container grid-item-12of12 width__100 animatedParent">
-    <h1 class="header-headline headline headline__w rellax animated fadeInLeft" data-rellax-speed="1.5">
+<header id="header" class="header-wrapper grid-container grid-item-12of12 width__100">
+    <h1 class="header-headline headline headline__w rellax animated" data-rellax-speed="1.5">
         {{ config.site.headline_one }}
         <span id ="header-random" class="headline__underline headline__underline-p">Design</span>
         {{ config.site.headline_two }}
@@ -15,7 +15,7 @@
         {% endfor %}
 
     </div>
-    <figure class="header-img rellax animated fadeInRight" data-rellax-speed="1">
+    <figure class="header-img rellax animated" data-rellax-speed="1">
         {% set image = config.site.heroImg %}
         {{page.find('/images').media[image].quality(80).html('heroshot', 'selbstbild')}}
     </figure>

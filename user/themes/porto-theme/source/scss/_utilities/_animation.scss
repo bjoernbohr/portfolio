@@ -8,9 +8,7 @@
     transition: $transition;
     transition-delay: .25s;
   }
-}
 
-.go {
   .headline {
     &__underline {
       &::after {
@@ -21,5 +19,6 @@
     }
   }
 }
+
 
 
