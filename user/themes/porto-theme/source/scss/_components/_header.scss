@@ -20,10 +20,10 @@
       left: 0;
       z-index: -1;
       height: calc(100vh - 210px);
-      width: 0%;
+      width: 0;
       background: $primaryColor;
       background-image: url('../images/pattern.svg');
-      transition: $transition;
+      transition: $transition-ele;
       @include mq(m) {
         height: calc(100vh - 120px);
       }
@@ -38,10 +38,17 @@
   &-headline {
     grid-column: 1 / 14;
     grid-row: 4;
-    z-index: 2;
+    width: 0;
+    min-height: 400px;
     padding: 13px 0 0 0 ;
+    overflow: hidden;
+    opacity: 0;
+    z-index: 2;
     @include mq(m) {
       grid-column: 3 / 12;
+    }
+    &__underline::after {
+      width: 0;
     }
   }
   &-social {
@@ -60,17 +67,35 @@
     }
   }
   &-img {
+    position: relative;
     grid-column: 4 / 15;
     grid-row: 2 / 10;
     margin-bottom: 60px;
+    overflow: hidden;
     z-index: 1;
     @include mq(m) {
       grid-column: 7 / 15;
     }
     img {
-      width: 100%;
+      width:calc(100% - 20px);
       height: 100%;
       object-fit: cover;
+      opacity: 0;
+      transform: translateX(100%);
+      transition: $transition-ele;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: $p_20;
+      background-color: $secondaryColor;
+      opacity: 0;
+      transform: translateX(100%);
+      transition: $transition-ele;
+      z-index: -1;
     }
   }
 }

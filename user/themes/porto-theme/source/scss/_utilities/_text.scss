@@ -43,7 +43,7 @@ $weight-n: normal !default;
     &::after {
       content: '';
       height: 20px;
-      width: 0%;
+
       position: absolute;
       right: 12px;
       top: 50%;
@@ -75,6 +75,7 @@ $weight-n: normal !default;
 }
 
 .subline {
+  display: inline-block;
   font-family: $font;
   font-size: calc(var(--size) - 2.75em);
   font-weight: $weight;

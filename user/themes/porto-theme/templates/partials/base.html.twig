@@ -17,10 +17,10 @@
         {% do assets.addCss('theme://css/reset.css', 100) %}
         {% do assets.addCss('theme://css/main.css', 99) %}
         {% do assets.addCss('theme://css/modernizr.css', 98) %}
-        {% do assets.addCss('theme://css/animations.css', 97) %}
+{#        {% do assets.addCss('theme://css/animations.css', 97) %}
         <!--[if lte IE 9]>
         {% do assets.addCss('theme://css/animations-ie-fix.css', 97) %}
-        <![endif]-->
+        <![endif]-->#}
     {% endblock %}
     {{ assets.css() }}
 
@@ -74,28 +74,14 @@
             wrapper: false,
             round: true,
             vertical: true,
-            horizontal: false
-        });
-
-        jQuery(document).ready(function(){
-
-            function isVisisble(elem){
-                return $(elem).offset().top - $(window).scrollTop() < $(elem).height() ;
-            }
-            $(window).scroll(function(){
-                if (isVisisble( $('#about') )) {
-                    $('#about').addClass('turn_on');
-                } else {
-                    $('#about').removeClass('turn_on');
-                }
-            });
+            horizontal: true
         });
     </script>
 
 
-<script id="__bs_script__">//<![CDATA[
+{#<script id="__bs_script__">//<![CDATA[
     document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.24.4'><\/script>".replace("HOST", location.hostname));
-    //]]></script>
+    //]]></script>#}
 
 
 

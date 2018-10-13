@@ -3,13 +3,14 @@
   &-item {
     &__p {
       position: absolute;
-      top: 1430px;
+      top: 1359px;
       width: 2500px;
-      height: 2200px;
+      height: 2266px;
       background: $secondaryColor;
-      clip-path: polygon(80% -3%, 26% 53%, 133% 100%);
+      -webkit-clip-path: polygon(80% -3%, 26% 53%, 133% 100%);
+      clip-path: polygon(85% -5%, 26% 49%, 105% 99% );
       z-index: 1;
-      right: -612px;
+      right: -460px;
       &-2 {
         position: absolute;
         background-color: $secondaryColor;

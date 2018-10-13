@@ -1,0 +1,22 @@
+.block {
+  &-s {
+    display: block;
+    min-width: 530px;
+    max-width: 530px;
+  }
+  &-m {
+    display: block;
+    min-width: 710px;
+    max-width: 710px;
+  }
+  &-l {
+    display: block;
+    min-width: 900px;
+    max-width: 900px;
+  }
+  &-xl {
+    display: block;
+    min-width: 1500px;
+    max-width: 1500px;
+  }
+}

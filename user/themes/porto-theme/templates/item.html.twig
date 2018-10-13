@@ -6,7 +6,7 @@
 </h2>
 {% block img %}
     {% set image = page.header.image %}
-    {{page.media[image].quality(80).html('referenzbild', '')}}
+    {{page.media[image].quality(80).html('referenzbild', '', 'animated fade fade-w')}}
 {% endblock %}
 <h3 style="background:blue">
     {% block subline %}  {{ page.header.subline }} {% endblock %}

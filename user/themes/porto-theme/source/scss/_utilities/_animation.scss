@@ -2,23 +2,102 @@
     header
 /////////// */
 
-.header-wrapper.fadein {
+.fade-h {
   &::after {
-    width: 100%;
-    transition: $transition;
-    transition-delay: .25s;
+    width: 100% !important;
+    transition: all 1s ease-in-out .5s;
   }
-
-  .headline {
-    &__underline {
+  .header {
+    &-img {
+      img {
+        transform: translateX(0);
+        opacity: 1;
+        transition: all 1s ease-in-out .5s;
+      }
       &::after {
-        width: 100%;
-        transition: $transition;
-        transition-delay: .75s;
+        opacity: 1;
+        transform: translateX(0);
+        transition: all 1s ease-in-out .25s;
+      }
+    }
+    &-headline {
+      width: 100%;
+      opacity: 1;
+      transition: all 1s ease-in-out .75s;
+      &__underline {
+        &::after {
+          width: 100%;
+          transition: all .25s ease-in-out 1.25s !important;
+        }
       }
     }
   }
 }
 
+/*-------------------------------*/
 
+.fade {
+  &-r {
+    opacity: 0;
+    transform: translateX(100%);
+    &.go {
+      opacity: 1;
+      transform: translateX(0);
+      transition: $transition-ele;
+    }
+  }
+  &-w {
+    width: 0;
+    opacity: 0;
+    overflow: hidden;
+    &.go {
+      width: 100%;
+      opacity: 1;
+      transition: $transition-ele;
+    }
+  }
+  &-under-r {
+    &::after {
+      width: 0;
+    }
+  }
+}
 
+.go {
+  .fade-under-r {
+    &::after {
+      width: 100%;
+      transition: $transition-ele;
+    }
+  }
+}
+
+/*/////////////
+     Teaser
+//////////// */
+
+.teaser-link.go::after {
+  width: 100%;
+  transition-delay: 1.5s;
+}
+
+.teaser-subline .go::after {
+  width: 100%;
+}
+
+.animated-odd {
+  .fade {
+    &-r {
+      opacity: 0;
+      transform: translateX(-100%);
+      &.go {
+        opacity: 1;
+        transform: translateX(0);
+        transition: $transition-ele;
+      }
+    }
+  }
+  .teaser-subline .go::after {
+    left: -12px;
+  }
+}

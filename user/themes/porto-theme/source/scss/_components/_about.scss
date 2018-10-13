@@ -30,14 +30,15 @@
       height: 100%;
       object-fit: cover;
       min-height: $maxWdh-s;
+      transition: $transition;
       z-index: 2;
     }
     &__bg {
       position: absolute;
       background: $primaryColor;
-      left: 45px;
+      max-width: calc(100% - 45px);
       top: 0px;
-      right: 0px;
+      right: 45px;
       bottom: 45px;
       z-index: 1;
     }

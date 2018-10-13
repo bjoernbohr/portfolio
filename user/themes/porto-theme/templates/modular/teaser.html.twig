@@ -1,23 +1,29 @@
-<section class="teaser-wrapper grid-container grid-container__sides {% if loop.first %}teaser-wrapper__first{% endif %}" data-tilt>
-    <figure class="teaser-img">
-        <a href="">
+<section class="teaser-wrapper grid-container grid-container__sides animated-p {% if loop.first %}teaser-wrapper__first{% endif %} {% if loop.index is even %}animated-odd{% endif %}" data-tilt>
+    <figure class="teaser-img animated-p" style="transition-delay: 2s">
+        <a href="" class="teaser-link height__100 animated animated-p" style="transition-delay: 2s">
             {{ block ("img", "item.html.twig") }}
         </a>
     </figure>
-    <h2 class="teaser-headline headline align-right">
-        {{ block("title", "item.html.twig") }}
-    </h2>
-    <h3 class="teaser-subline">
-       <span class="subline headline__underline headline__underline-small headline__underline-p">
+    <div class="teaser-headline animated-p">
+        <h2 class="headline align-right block-xl animated fade fade-r" style="transition-delay: 2s">
+            {{ block("title", "item.html.twig") }}
+        </h2>
+    </div>
+    <h3 class="teaser-subline block-xl animated-p">
+       <span class="subline headline__underline headline__underline-small headline__underline-p animated fade fade-r" style="transition-delay: 2s">
           {{ block("subline", "item.html.twig") }}
        </span>
     </h3>
-    <p class="teaser-text text">
-        {{ block("text", "item.html.twig") }}
-    </p>
-    <a href="" class="teaser-btn btn btn__ghost-p text text__upper text__bold width__100" >
-        <span class="btn-text">mehr infos</span>
-    </a>
+    <div class="teaser-text animated-p">
+        <p class="text animated fade fade-r">
+            {{ block("text", "item.html.twig") }}
+        </p>
+    </div>
+    <div class="teaser-btn animated-p">
+        <a href="" class="btn btn__ghost-p text text__upper text__bold width__100 animated fade fade-r" >
+            <span class="btn-text">mehr infos</span>
+        </a>
+    </div>
 </section>
 
 
