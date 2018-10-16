@@ -6,14 +6,29 @@ jQuery(document).ready(function () {
     $('#header').addClass('fade-h');
 
     /*fadeIn on Scroll*/
-    function isVisisble(elem) {
-        return $(elem).offset().top - $(window).scrollTop() < $(elem).height();
-    }
-    $(window).scroll(function () {
-        if (isVisisble($('.animated-p'))) {
-            if($('.animated-p').children('.animated').addClass('go'));
-        };
-    });
+
+
+
+        jQuery(document).ready(function() {
+
+            jQuery.fn.isInViewport = function() {
+                var elementTop = jQuery(this).offset().top;
+                var elementBottom = elementTop + jQuery(this).outerHeight();
+
+                var viewportTop = jQuery(window).scrollTop();
+                var viewportBottom = viewportTop + jQuery(window).height();
+
+                return elementBottom > viewportTop && elementTop < viewportBottom;
+            };
+
+            jQuery(window).on('resize scroll', function() {
+            jQuery('.animated-p').each(function() {
+                if (jQuery(this).isInViewport()) {
+                    jQuery(this).addClass('go');
+                    }
+                });
+            });
+        });
 
     /*fadeIn Reset transition*/
     $('.fade').on('transitioned MSTransitionEnd webkitTransitionEnd oTransitionEnd', function(event) {
@@ -21,7 +36,7 @@ jQuery(document).ready(function () {
     });
 
     /*der Id setztene Loop JO!*/
-    $("#top").find("header, section, footer").each(function () {
+    $("*").each(function () {
 
         IDs.push($(this).attr("id"));
 
@@ -30,6 +45,14 @@ jQuery(document).ready(function () {
         });
 
     });
+
+/*      if($('*').hasClass('animated-p')) {
+
+          $('.animated-p').addClass('trigger-' + (+1))
+      }*/
+
+
+
 
 });
 
