@@ -6,9 +6,6 @@ jQuery(document).ready(function () {
     $('#header').addClass('fade-h');
 
     /*fadeIn on Scroll*/
-
-
-
         jQuery(document).ready(function() {
 
             jQuery.fn.isInViewport = function() {

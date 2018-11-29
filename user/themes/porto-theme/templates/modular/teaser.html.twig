@@ -1,26 +1,26 @@
-<section class="teaser-wrapper grid-container grid-container__sides animated-p {% if loop.first %}teaser-wrapper__first{% endif %} {% if loop.index is even %}animated-p__odd{% endif %}" data-tilt>
-    <figure class="teaser-img" style="transition-delay: 2s">
-        <a href="" class="teaser-link height__100 animated" style="transition-delay: 2s">
+<section class="teaser-wrapper grid-container grid-container__sides {% if loop.first %}teaser-wrapper__first{% endif %}" data-tilt>
+    <figure class="teaser-img">
+        <a href="" class="teaser-link height__100">
             {{ block ("img", "item.html.twig") }}
         </a>
     </figure>
     <div class="teaser-headline">
-        <h2 class="headline align-right block-xl fade-r" style="transition-delay: 2s">
+        <h2 class="headline align-right block-xl">
             {{ block("title", "item.html.twig") }}
         </h2>
     </div>
     <h3 class="teaser-subline block-xl">
-       <span class="subline headline__underline headline__underline-small headline__underline-p fade-r" style="transition-delay: 2s">
+       <span class="subline headline__underline headline__underline-small headline__underline-p" >
           {{ block("subline", "item.html.twig") }}
        </span>
     </h3>
     <div class="teaser-text">
-        <p class="text fade-r">
+        <p class="text">
             {{ block("text", "item.html.twig") }}
         </p>
     </div>
     <div class="teaser-btn">
-        <a href="" class="btn btn__ghost-p text text__upper text__bold width__100 fade-r" >
+        <a href="" class="btn btn__ghost-p text text__upper text__bold width__100" >
             <span class="btn-text">mehr infos</span>
         </a>
     </div>

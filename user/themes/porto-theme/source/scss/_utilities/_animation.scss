@@ -91,22 +91,6 @@
       }
     }
   }
-  &.animated__odd {
-    .fade {
-      &-r {
-        opacity: 0;
-        transform: translateX(-100%);
-        &.go {
-          opacity: 1;
-          transform: translateX(0);
-          transition: $transition-ele;
-        }
-      }
-    }
-    .teaser-subline .go::after {
-      left: -12px;
-    }
-  }
 }
 
 
@@ -120,15 +104,3 @@
   }
 }
 
-/*/////////////
-     Teaser
-//////////// */
-
-.teaser-link.go::after {
-  width: 100%;
-  transition-delay: 1.5s;
-}
-
-.teaser-subline .go::after {
-  width: 100%;
-}
