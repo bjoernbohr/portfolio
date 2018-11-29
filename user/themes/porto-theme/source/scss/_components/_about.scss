@@ -43,6 +43,7 @@
       width: calc(100% - 45px);
       height: calc(100% - 45px);
       z-index: 1;
+      transform: translateX(0px);
     }
   }
   &-btn {

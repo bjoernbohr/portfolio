@@ -20,6 +20,6 @@
     <figure class="about-img">
         {% set image = config.site.aboutImg %}
         {{ page.find('/images').media[image].quality(80).html('ich bins', 'mein bild') }}
-        <span class="about-img__bg"></span>
+        <span class="about-img__bg" parallax></span>
     </figure>
 </section>

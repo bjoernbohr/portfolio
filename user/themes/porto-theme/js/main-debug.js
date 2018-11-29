@@ -48,7 +48,23 @@ jQuery(document).ready(function () {
           $('.animated-p').addClass('trigger-' + (+1))
       }*/
 
+//PARALLAX FUNCTION
+    $(window).scroll(function(e){
+        parallax();
+    });
+    function parallax(){
+        var scrolled = $(window).scrollTop();
+        $('.bg').css('top',-(scrolled*0.1)+'px');
+    }
 
+
+
+    function parallax(){
+        var scrolled = $(window).scrollTop();
+        var speed = 0.1;
+
+        $('[parallax]').css({'transform' : 'translateY( ' + -(scrolled*speed) +'px)'});
+    }
 
 
 });
