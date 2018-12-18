@@ -52,18 +52,16 @@ jQuery(document).ready(function () {
     $(window).scroll(function(e){
         parallax();
     });
-    function parallax(){
-        var scrolled = $(window).scrollTop();
-        $('.bg').css('top',-(scrolled*0.1)+'px');
-    }
-
-
 
     function parallax(){
         var scrolled = $(window).scrollTop();
-        var speed = 0.1;
 
-        $('[parallax]').css({'transform' : 'translateY( ' + -(scrolled*speed) +'px)'});
+        $('[parallax]').each(function() {
+            var parallaxItem = $(this);
+            var getSpeed = $(parallaxItem).attr('data-speed');
+
+            $(this).css({'transform' : 'translateY( ' + -(scrolled*getSpeed) +'px)'});
+        });
     }
 
 
